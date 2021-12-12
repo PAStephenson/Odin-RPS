@@ -37,12 +37,20 @@ function playRound(player, computer) {
 	}
 }
 
-const playerSelection = playerPlay();
-const computerSelection = computerPlay();
+function game() {
+	const numberOfGames = 5;
 
-console.log(playerSelection);
-console.log(computerSelection);
+	for (let i = 0; i < numberOfGames; i++) {
+		const playerSelection = playerPlay();
+		const computerSelection = computerPlay();
 
-let result = playRound(playerSelection, computerSelection);
+		console.log(`You selected ${playerSelection.toUpperCase()}`);
+		console.log(`The computer selected ${computerSelection}`);
 
-console.log(result);
+		const result = playRound(playerSelection, computerSelection);
+
+		console.log(result);
+	}
+}
+
+game();
