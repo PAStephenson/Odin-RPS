@@ -10,35 +10,33 @@ function playerPlay() {
 }
 
 function playRound(player, computer) {
-	const winMessage = "You Win!"
-	const loseMessage = "You Lose!"
-	const drawMessage = "Draw!"
-
 	if (player.toUpperCase() == computer) {
-		return drawMessage;
+		return "DRAW";
 	} else if (player.toUpperCase() == "ROCK") {
 		if (computer == "SCISSORS") {
-			return winMessage;
+			return "PLAYER WIN";
 		} else if (computer == "PAPER") {
-			return loseMessage;
+			return "COMPUTER WIN";
 		}
 	} else if (player.toUpperCase() == "PAPER") {
-		if (computer == "SCISSORS") {
-			return winMessage;
-		} else if (computer == "ROCK") {
-			return loseMessage;
+		if (computer == "ROCK") {
+			return "PLAYER WIN";
+		} else if (computer == "SCISSORS") {
+			return "COMPUTER WIN";
 		}
 	} else if (player.toUpperCase() == "SCISSORS") {
 		if (computer == "PAPER") {
-			return winMessage;
+			return "PLAYER WIN";
 		} else if (computer == "ROCK") {
-			return loseMessage;
+			return "COMPUTER WIN";
 		}
 	}
 }
 
 function game() {
 	const numberOfGames = 5;
+	let playerScore = 0;
+	let computerScore = 0;
 
 	for (let i = 0; i < numberOfGames; i++) {
 		const playerSelection = playerPlay();
@@ -49,7 +47,21 @@ function game() {
 
 		const result = playRound(playerSelection, computerSelection);
 
+		if (result == "PLAYER WIN") {
+			playerScore += 1;
+		} else {
+			computerScore += 1;
+		}
+
 		console.log(result);
+	}
+
+	if (playerScore == computerScore) {
+		console.log(`After ${numberOfGames} games, its a draw.`);
+	} else if (playerScore > computerScore) {
+		console.log(`After ${numberOfGames} games, you are the overall winner!`);
+	} else {
+		console.log(`After ${numberOfGames} games, the computer is the overall winner!`);
 	}
 }
 
