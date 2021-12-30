@@ -8,6 +8,6 @@ the defensive block spell.
 ## Rules
 Attack beats Disarm, Disarm beats Block, Block beats Attack
 
-Made while following [The Odin Project](https://www.theodinproject.com). 
-
 ## [Live Preview](https://pastephenson.github.io/Odin-RPS/)
+
+Made while following [The Odin Project](https://www.theodinproject.com). 
