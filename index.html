@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en">
 	<head>
-		<meta charset="uft-8">
-		<title>Rock Paper Scissors</title>
+		<meta charset="UTF-8">
+		<title>Magical Warefare</title>
+		<link href="style.css" rel="stylesheet">
+		<script src="rock-paper-scissors.js" defer></script>
 	</head>
-	<body>
-		<script src="rock-paper-scissors.js"></script>
+	<body class="flex-column">
+		<header>
+			<h1>Magical Warfare</h1>
+			<p>A magical duel to the death!</p>
+		</header>
+		<main>
+			<div id="messages" class="messages">
+				<div id="winnerMessage" class="winner-message">Choose Your Spell</div>
+				<div id="moveMessage" class="move-message">First to 5 points wins</div>
+			</div>
+			<div class="flex stats-container">
+				<div class="stats">
+					<div id="playerMove" class="move">?</div>
+					<div id="playerTotal" class="score">Player: 0</div>
+				</div>
+				<div class="stats">
+					<div id="computerMove" class="move">?</div>	
+					<div id="computerTotal" class="score">Computer: 0</div>
+				</div>
+			</div>
+			<div class="flex spells">
+				<div class="spell">
+					<button id="attack" class="spell-button attack">&#9889;</button>
+					<div class="spell-name">Attack</div>
+				</div>
+				<div class="spell">
+					<button id="disarm" class="spell-button disarm">&#127744;</button>
+					<div class="spell-name">Disarm</div>
+				</div>
+				<div class="spell">
+					<button id="block" class="spell-button block">&#128160;</button>
+					<div class="spell-name">Block</div>
+				</div>
+			</div>
+			<div class="rules">Attack beats Disarm, Disarm beats Block, Block beats Attack</div>
+		</main>
+		<footer>
+			<p>Made by <a href="https://github.com/PAStephenson">PAStephenson</a> while following <a href="https://www.theodinproject.com">The Odin Project</a></p>
+		</footer>
+		<div id="modelContainer" class="flex model-container">
+			<div class="model">
+				<div id="modelMessage" class="model-message"></div>	
+				<button id="btnModel" class="btn-model">Duel Again?</button>
+			</div>
+		</div>
 	</body>
 </html>

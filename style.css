@@ -1,0 +1,156 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	font-family: sans-serif;
+	text-align: center;
+}
+
+html {
+	/* Needed for footer */
+	height: 100%;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+body {
+	display: flex;
+	flex-direction: column;
+	color: #D8DEE9;
+	background-color: #434C5E;
+	/* Needed for footer */
+	min-height: 100%;
+}
+
+header {
+	padding: 20px;
+	font-size: 35px;
+	color: #BF616A;
+	background-color: #2E3440;
+}
+
+
+.winner-message{
+	padding-top: 20px;
+	padding-bottom: 10px;
+	font-size: 40px;
+	font-weight: bold;
+}
+
+.move-message {
+	padding-top: 10px;
+	font-size: 25px;
+}
+
+.stats {
+	padding: 20px;
+	height: 170px;
+	width: 150px;
+}
+
+.move {
+	height: 100px;
+	font-size: 80px;
+}
+
+.score {
+	margin-top: 20px;
+	font-size: 25px;
+	font-weight: bold;
+}
+
+.spells {
+	gap: 80px;
+}
+
+.spell {
+	height: 150px;
+	width: 150px;
+}
+
+.spell-button {
+	border: 3px solid #ECEFF4;
+	border-radius: 12px;
+	height: 120px;
+	width: 120px;
+	font-size: 80px;
+}
+
+.spell-name {
+	margin-top: 15px;
+}
+
+.attack {
+	background-color: #81A1C1;
+}
+
+.disarm {
+	background-color: #EBCB8B;
+}
+
+.block {
+	background-color: #A3BE8C;
+}
+	
+.spell-name {
+	font-size: 25px;
+}
+
+.rules {
+	margin-top: 50px;
+	font-size: 25px;
+}
+
+footer {
+	margin-top: auto;
+	padding: 20px;
+	font-size: 20px;
+}
+
+a {
+	text-decoration: none;
+	color: #D8DEE9;
+}
+
+a:hover {
+	color: #8FBCBB;
+}
+
+/* Model overlay to announce winner and reset game */
+.model-container {
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	opacity: 0;
+	pointer-events: none;
+	background-color: rgba(0, 0, 0, 0.5);
+}
+
+.model-container.show {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+.model {
+	padding: 30px;
+	border-radius: 10px;
+	width: 400px;
+	max-width: 100%;
+	font-size: 40px;
+	font-weight: bold;
+	background-color: #3B4252;	;
+}
+
+.btn-model {
+	margin-top: 16px;
+	padding: 8px 16px;
+	border: none;
+	border-radius: 8px;
+	font-size: 32px;
+	font-weight: bold;
+	color:  #E5E9F0;
+	background-color: #8FBCBB;
+}
