@@ -1,24 +1,24 @@
 // User Interface variables
-const btnAttack = document.querySelector('#attack');
-const btnDisarm = document.querySelector('#disarm');
-const btnBlock = document.querySelector('#block');
-const winnerMessage = document.querySelector('#winnerMessage');
-const moveMessage = document.querySelector('#moveMessage');
-const playerMove = document.querySelector('#playerMove');
-const computerMove = document.querySelector('#computerMove');
-const playerTotal = document.querySelector('#playerTotal');
-const computerTotal = document.querySelector('#computerTotal');
+const btnAttack = document.querySelector("#attack");
+const btnDisarm = document.querySelector("#disarm");
+const btnBlock = document.querySelector("#block");
+const winnerMessage = document.querySelector("#winnerMessage");
+const moveMessage = document.querySelector("#moveMessage");
+const playerMove = document.querySelector("#playerMove");
+const computerMove = document.querySelector("#computerMove");
+const playerTotal = document.querySelector("#playerTotal");
+const computerTotal = document.querySelector("#computerTotal");
 
-btnAttack.addEventListener('click', () => {game('ATTACK')});
-btnDisarm.addEventListener('click', () => {game('DISARM')});
-btnBlock.addEventListener('click', () => {game('BLOCK')});
+btnAttack.addEventListener("click", () => {game("ATTACK")});
+btnDisarm.addEventListener("click", () => {game("DISARM")});
+btnBlock.addEventListener("click", () => {game("BLOCK")});
 
 // Model overall winner message variables
-const modelContainer = document.querySelector('#modelContainer');
-const modelMessage = document.querySelector('#modelMessage');
-const btnModel = document.querySelector('#btnModel');
+const modelContainer = document.querySelector("#modelContainer");
+const modelMessage = document.querySelector("#modelMessage");
+const btnModel = document.querySelector("#btnModel");
 
-btnModel.addEventListener('click', () => {resetGame()});
+btnModel.addEventListener("click", () => {resetGame()});
 
 // Game variables
 let playerScore = 0;
@@ -27,26 +27,26 @@ const numberOfGames = 5;
 
 function updateMove(player, computer) {
 	switch (player) {
-		case 'ATTACK':
-			playerMove.textContent = '⚡️';
+		case "ATTACK":
+			playerMove.textContent = "⚡️";
 			break;
-		case 'DISARM':
-			playerMove.textContent = '🌀';
+		case "DISARM":
+			playerMove.textContent = "🌀";
 			break;
-		case 'BLOCK':
-			playerMove.textContent = '💠';
+		case "BLOCK":
+			playerMove.textContent = "💠";
 			break;
 	}
 
 	switch (computer) {
-		case 'ATTACK':
-			computerMove.textContent = '⚡️';
+		case "ATTACK":
+			computerMove.textContent = "⚡️";
 			break;
-		case 'DISARM':
-			computerMove.textContent = '🌀';
+		case "DISARM":
+			computerMove.textContent = "🌀";
 			break;
-		case 'BLOCK':
-			computerMove.textContent = '💠';
+		case "BLOCK":
+			computerMove.textContent = "💠";
 			break;
 		}
 }
@@ -68,7 +68,7 @@ function updateMessage(player, computer, result) {
 		playerTitle = player.charAt(0) + player.slice(1).toLowerCase();
 		moveMessage.textContent = `${playerTitle} beats ${computer.toLowerCase()}`
 	} else if (result == "COMPUTER WIN") {
-		winnerMessage.textContent = 'You lose!'
+		winnerMessage.textContent = "You lose!"
 		// Puts computer move into title case (first letter capital, rest lower)
 		computerTitle = computer.charAt(0) + computer.slice(1).toLowerCase();
 		moveMessage.textContent = `${computerTitle} beats ${player.toLowerCase()}`
@@ -76,7 +76,7 @@ function updateMessage(player, computer, result) {
 }
 
 function endGame(result) {
-	modelContainer.classList.add('show');   
+	modelContainer.classList.add("show");   
 
 	switch (result) {
 		case "PLAYER WIN":	
@@ -89,16 +89,16 @@ function endGame(result) {
 }
 
 function resetGame() {
-	modelContainer.classList.remove('show'); 
+	modelContainer.classList.remove("show"); 
 
 	playerScore = 0;
 	computerScore = 0;
 	updateScore();
 
-	playerMove.textContent = '?';
-	computerMove.textContent = '?';
+	playerMove.textContent = "?";
+	computerMove.textContent = "?";
 	winnerMessage.textContent = "Choose Your Spell";
-	message.textContent = 'Who will strike first?';
+	moveMessage.textContent = "First to 5 points wins";
 }
 
 function computerPlay() {
