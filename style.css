@@ -72,11 +72,15 @@ header {
 }
 
 .spell-button {
-	border: 3px solid #ECEFF4;
+	border: 4px solid #ECEFF4;
 	border-radius: 12px;
 	height: 120px;
 	width: 120px;
 	font-size: 80px;
+}
+
+.spell-button:hover {
+	border: 4px solid #BF616A;
 }
 
 .spell-name {
@@ -153,4 +157,8 @@ a:hover {
 	font-weight: bold;
 	color:  #E5E9F0;
 	background-color: #8FBCBB;
+}
+
+.btn-model:hover {
+	background-color: #88C0D0;
 }
