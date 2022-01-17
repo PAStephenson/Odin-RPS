@@ -1,7 +1,7 @@
 // User Interface variables
-const btnAttack = document.querySelector("#attack");
-const btnDisarm = document.querySelector("#disarm");
-const btnBlock = document.querySelector("#block");
+const btnRock = document.querySelector("#rock");
+const btnPaper = document.querySelector("#paper");
+const btnScissors = document.querySelector("#scissors");
 const winnerMessage = document.querySelector("#winnerMessage");
 const moveMessage = document.querySelector("#moveMessage");
 const playerMove = document.querySelector("#playerMove");
@@ -9,9 +9,9 @@ const computerMove = document.querySelector("#computerMove");
 const playerTotal = document.querySelector("#playerTotal");
 const computerTotal = document.querySelector("#computerTotal");
 
-btnAttack.addEventListener("click", () => {game("ATTACK")});
-btnDisarm.addEventListener("click", () => {game("DISARM")});
-btnBlock.addEventListener("click", () => {game("BLOCK")});
+btnRock.addEventListener("click", () => {game("ROCK")});
+btnPaper.addEventListener("click", () => {game("PAPER")});
+btnScissors.addEventListener("click", () => {game("SCISSORS")});
 
 // Model overall winner message variables
 const modelContainer = document.querySelector("#modelContainer");
@@ -27,26 +27,26 @@ const numberOfGames = 5;
 
 function updateMove(player, computer) {
 	switch (player) {
-		case "ATTACK":
-			playerMove.textContent = "⚡️";
+		case "ROCK":
+			playerMove.textContent = "🪨";
 			break;
-		case "DISARM":
-			playerMove.textContent = "🌀";
+		case "PAPER":
+			playerMove.textContent = "📄";
 			break;
-		case "BLOCK":
-			playerMove.textContent = "💠";
+		case "SCISSORS":
+			playerMove.textContent = "✂️";
 			break;
 	}
 
 	switch (computer) {
-		case "ATTACK":
-			computerMove.textContent = "⚡️";
+		case "ROCK":
+			computerMove.textContent = "🪨";
 			break;
-		case "DISARM":
-			computerMove.textContent = "🌀";
+		case "PAPER":
+			computerMove.textContent = "📄";
 			break;
-		case "BLOCK":
-			computerMove.textContent = "💠";
+		case "SCISSORS":
+			computerMove.textContent = "✂️";
 			break;
 		}
 }
@@ -97,12 +97,12 @@ function resetGame() {
 
 	playerMove.textContent = "?";
 	computerMove.textContent = "?";
-	winnerMessage.textContent = "Choose Your Spell";
+	winnerMessage.textContent = "Choose Your Move";
 	moveMessage.textContent = "First to 5 points wins";
 }
 
 function computerPlay() {
-	const moves = ["ATTACK", "DISARM", "BLOCK"];
+	const moves = ["ROCK", "PAPER", "SCISSORS"];
 	const move = Math.floor(Math.random() * moves.length);
 	return moves[move];
 }
@@ -110,22 +110,22 @@ function computerPlay() {
 function playRound(player, computer) {
 	if (player == computer) {
 		return "DRAW";
-	} else if (player == "ATTACK") {
-		if (computer == "DISARM") {
+	} else if (player == "ROCK") {
+		if (computer == "SCISSORS") {
 			return "PLAYER WIN";
-		} else if (computer == "BLOCK") {
+		} else if (computer == "PAPER") {
 			return "COMPUTER WIN";
 		}
-	} else if (player == "DISARM") {
-		if (computer == "BLOCK") {
+	} else if (player == "PAPER") {
+		if (computer == "ROCK") {
 			return "PLAYER WIN";
-		} else if (computer == "ATTACK") {
+		} else if (computer == "SCISSORS") {
 			return "COMPUTER WIN";
 		}
-	} else if (player == "BLOCK") {
-		if (computer == "ATTACK") {
+	} else if (player == "SCISSORS") {
+		if (computer == "PAPER") {
 			return "PLAYER WIN";
-		} else if (computer == "DISARM") {
+		} else if (computer == "ROCK") {
 			return "COMPUTER WIN";
 		}
 	}
