@@ -62,16 +62,16 @@ header {
 	font-weight: bold;
 }
 
-.spells {
+.move-container {
 	gap: 80px;
 }
 
-.spell {
+.moves {
 	height: 150px;
 	width: 150px;
 }
 
-.spell-button {
+.move-button {
 	border: 4px solid #ECEFF4;
 	border-radius: 12px;
 	height: 120px;
@@ -79,30 +79,27 @@ header {
 	font-size: 80px;
 }
 
-.spell-button:hover {
+.move-button:hover {
 	border: 4px solid #BF616A;
 }
 
-.spell-name {
+.move-name {
 	margin-top: 15px;
-}
-
-.attack {
-	background-color: #81A1C1;
-}
-
-.disarm {
-	background-color: #EBCB8B;
-}
-
-.block {
-	background-color: #A3BE8C;
-}
-	
-.spell-name {
 	font-size: 25px;
 }
 
+.rock {
+	background-color: #81A1C1;
+}
+
+.paper {
+	background-color: #EBCB8B;
+}
+
+.scissors {
+	background-color: #A3BE8C;
+}
+	
 .rules {
 	margin-top: 50px;
 	font-size: 25px;
