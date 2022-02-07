@@ -1,12 +1,8 @@
 # Odin Rock Paper Scissors
-A browser version of the classic rock, paper, scissors game but with a magical twist. Rather than
-rocks, paper and scissors the player and their computer opponent each pick a magic spell.
-
-Possible spells include: the aggressive attack spell, the disarm spell to hinder your opponent and
-the defensive block spell.
+A browser version of the classic rock, paper, scissors game.
 
 ## Rules
-Attack beats Disarm, Disarm beats Block, Block beats Attack
+Rock beats Scissors, Paper beats Rock, Scissors beats Paper
 
 ## [Live Preview](https://pastephenson.github.io/Odin-RPS/)
 
